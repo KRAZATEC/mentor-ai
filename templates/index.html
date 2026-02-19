@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MentorAI — Your AI Career Mentor</title>
+  <meta name="description" content="MentorAI is your intelligent AI career mentor. Get career guidance, roadmaps, resume tips, and interview prep instantly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">🎓</div>
+          <div>
+            <h1 class="logo-title">MentorAI</h1>
+            <p class="logo-sub">AI Career Mentor</p>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <p class="nav-label">Quick Actions</p>
+        <button class="chip" id="chip-roadmap" data-prompt="Give me a career roadmap">
+          <span class="chip-icon">🗺️</span> Career Roadmap
+        </button>
+        <button class="chip" id="chip-interview" data-prompt="Help me prepare for an interview">
+          <span class="chip-icon">🎤</span> Interview Prep
+        </button>
+        <button class="chip" id="chip-resume" data-prompt="Give me resume tips and advice">
+          <span class="chip-icon">📄</span> Resume Tips
+        </button>
+        <button class="chip" id="chip-motivation" data-prompt="I need some motivation for my career">
+          <span class="chip-icon">⚡</span> Motivation
+        </button>
+        <button class="chip" id="chip-skills" data-prompt="What skills should I learn for a tech career?">
+          <span class="chip-icon">🛠️</span> Skill Advice
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-clear" id="btn-clear">
+          <span>🗑️</span> Clear Chat
+        </button>
+        <p class="powered-by">Powered by Groq · llama3-8b</p>
+      </div>
+    </aside>
+
+    <!-- ── Main Chat Area ── -->
+    <main class="chat-area">
+      <header class="chat-header">
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+        <div class="header-info">
+          <span class="status-dot"></span>
+          <span class="header-title">MentorAI</span>
+        </div>
+        <div class="header-tag">Career Mentor</div>
+      </header>
+
+      <!-- Messages -->
+      <section class="messages" id="messages" role="log" aria-live="polite" aria-label="Chat messages">
+        <!-- Welcome message -->
+        <div class="message assistant" id="welcome-msg">
+          <div class="avatar">🎓</div>
+          <div class="bubble">
+            <p>👋 <strong>Hello! I'm MentorAI</strong> — your personal AI career mentor.</p>
+            <p>I'm here to help you with:</p>
+            <ul>
+              <li>🗺️ Career roadmaps &amp; path planning</li>
+              <li>🛠️ Skill &amp; certification recommendations</li>
+              <li>📄 Resume &amp; portfolio advice</li>
+              <li>🎤 Interview preparation</li>
+              <li>⚡ Motivation &amp; productivity tips</li>
+            </ul>
+            <p>Tell me about yourself — what's your field or goal? Or use the quick actions on the left to get started!</p>
+            <p><em>You've got this — just take it one step at a time. 🚀</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typing indicator -->
+      <div class="typing-indicator" id="typing-indicator" hidden>
+        <div class="avatar">🎓</div>
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Input -->
+      <footer class="input-area">
+        <div class="input-wrapper">
+          <textarea
+            id="user-input"
+            placeholder="Ask me anything about your career…"
+            rows="1"
+            maxlength="2000"
+            aria-label="Type your message"
+          ></textarea>
+          <button class="send-btn" id="send-btn" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+        <p class="input-hint">MentorAI can make mistakes. Verify important career information.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
